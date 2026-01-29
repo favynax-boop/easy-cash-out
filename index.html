@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Easy Cash Out</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #0f172a;
+      color: white;
+      padding-top: 50px;
+    }
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #22c55e;
+      color: black;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 22px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎮 Easy Cash Out</h1>
+  <p>Click to try your luck</p>
+
+  <button onclick="playGame()">PLAY</button>
+
+  <div id="result"></div>
+
+  <script>
+    function playGame() {
+      let rewards = [0, 50, 100, 200, 500, 1000];
+      let randomIndex = Math.floor(Math.random() * rewards.length);
+      let win = rewards[randomIndex];
+
+      if (win === 0) {
+        document.getElementById("result").innerHTML =
+          "😢 No win this time. Try again!";
+      } else {
+        document.getElementById("result").innerHTML =
+          "🎉 You won ₦" + win;
+      }
+    }
+  </script>
+
+</body>
+</html>
